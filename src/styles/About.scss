@@ -1,0 +1,769 @@
+@import "variables";
+
+.about-page {
+    background-color: $bg-light;
+    font-family: 'Inter', sans-serif;
+
+    // Standardized section spacing
+    section {
+        padding: 40px 0;
+
+        &.bg-white {
+            background-color: $white;
+        }
+    }
+
+    .section-title {
+        font-size: 2rem; // Slightly smaller for better balance
+        font-weight: 700;
+        color: $primary-blue;
+        margin-bottom: 1.25rem;
+        position: relative;
+
+        &::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(to right, $vibrant-blue, $hq-accent);
+            margin-top: 8px;
+            border-radius: 2px;
+        }
+
+        &.center {
+            text-align: center;
+
+            &::after {
+                margin: 8px auto;
+            }
+        }
+    }
+
+    .lead-text {
+        font-size: 1.1rem;
+        line-height: 1.7; // Slightly tighter
+        color: $text-body;
+        margin-bottom: 1.25rem;
+    }
+
+    .text-body {
+        line-height: 1.6;
+        color: $text-muted;
+    }
+
+    .nodal-box {
+        background: rgba($vibrant-blue, 0.03);
+        border-left: 4px solid $vibrant-blue;
+        padding: 24px !important;
+        border-radius: 12px !important;
+        margin-bottom: 30px !important;
+
+        h6 {
+            font-size: 0.95rem;
+            margin-bottom: 8px;
+        }
+
+        p {
+            line-height: 1.5;
+        }
+    }
+
+    .pillar-card {
+        background: $white;
+        border-radius: 12px;
+        padding: 24px; // Reduced from 30px
+        box-shadow: $shadow-sm;
+        border: 1px solid $border-soft;
+        height: 100%;
+        transition: all 0.3s ease;
+
+        &:hover {
+            transform: translateY(-5px);
+            box-shadow: $shadow-md;
+        }
+
+        .icon-box {
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
+            background: rgba($vibrant-blue, 0.08);
+            color: $vibrant-blue;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            margin-bottom: 16px;
+        }
+
+        h3 {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: $primary-blue;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 0.9rem;
+            color: $text-muted;
+            line-height: 1.5;
+            margin-bottom: 0;
+        }
+    }
+
+    .bureau-history {
+        background: $primary-blue;
+        color: $white;
+        padding: 60px 0;
+        position: relative;
+        overflow: hidden;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 70% 30%, rgba($vibrant-blue, 0.4), transparent 50%);
+        }
+
+        .section-title {
+            color: $white;
+            margin-bottom: 0.5rem;
+            padding-top: 0;
+        }
+
+        .establishment-date {
+            font-size: 2.2rem;
+            font-weight: 800;
+            background: linear-gradient(to right, $white, $hq-accent);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0;
+            line-height: 1;
+        }
+
+        .text-on-dark {
+            color: $text-on-dark;
+            font-size: 1rem;
+            margin-top: 1rem !important;
+            opacity: 0.9;
+        }
+    }
+
+    .function-list {
+        list-style: none;
+        padding: 0;
+
+        li {
+            padding: 12px 0; // Reduced from 15px
+            border-bottom: 1px solid $border-light;
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+
+            &:last-child {
+                border-bottom: none;
+            }
+
+            i {
+                color: $vibrant-blue;
+                margin-top: 4px;
+            }
+
+            h5 {
+                font-size: 1.05rem;
+                margin-bottom: 4px;
+            }
+
+            p {
+                font-size: 0.95rem;
+            }
+        }
+    }
+
+    .presence-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: 12px;
+
+        .city-card {
+            background: $white;
+            padding: 10px 15px;
+            border-radius: 8px;
+            border: 1px solid $border-soft;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: $text-dark;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s ease;
+
+            i {
+                color: $vibrant-blue;
+                font-size: 12px;
+            }
+
+            &:hover {
+                background: $vibrant-blue;
+                color: $white;
+                border-color: $vibrant-blue;
+
+                i {
+                    color: $white;
+                }
+            }
+        }
+    }
+
+    .contact-info-section {
+        .contact-card {
+            background: $white;
+            border-radius: 16px;
+            padding: 30px; // Reduced from 40px
+            height: 100%;
+            box-shadow: $shadow-sm;
+            border: 1px solid $border-soft;
+
+            &.dark {
+                background: $primary-blue;
+                color: $white;
+                border: none;
+
+                h4,
+                p,
+                a {
+                    color: $white;
+                }
+
+                .icon-box {
+                    background: rgba($white, 0.1);
+                    color: $white;
+                }
+            }
+
+            h4 {
+                font-weight: 700;
+                margin-bottom: 20px;
+                font-size: 1.3rem;
+            }
+
+            .info-item {
+                display: flex;
+                gap: 15px;
+                margin-bottom: 20px;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+
+                .icon-box {
+                    width: 44px;
+                    height: 44px;
+                    border-radius: 50%;
+                    background: $soft-blue;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-shrink: 0;
+                    color: $vibrant-blue;
+                    font-size: 18px;
+                }
+
+                .text-content {
+                    h5 {
+                        font-size: 0.8rem;
+                        text-transform: uppercase;
+                        letter-spacing: 0.5px;
+                        color: $text-muted;
+                        margin-bottom: 2px;
+                    }
+
+                    p,
+                    a {
+                        font-size: 1rem;
+                        font-weight: 500;
+                        margin: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    .hq-image-container {
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: $shadow-md;
+        position: relative;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to top, rgba($primary-blue, 0.4), transparent);
+        }
+    }
+
+    // Legislations Page Specific Styles
+    &.legislation-page {
+        .bg-primary-soft {
+            background-color: rgba($vibrant-blue, 0.1);
+        }
+
+        .bg-secondary-soft {
+            background-color: rgba($text-muted, 0.1);
+        }
+
+        .text-vibrant {
+            color: $vibrant-blue;
+        }
+
+        .legislation-sidebar-wrapper {
+            @media (min-width: 992px) {
+                position: sticky;
+                top: 225px;
+                align-self: flex-start;
+            }
+
+            @media (max-width: 991px) {
+                position: relative;
+                top: auto;
+                margin-bottom: 2rem;
+            }
+        }
+
+        .legislation-sidebar {
+
+            /* Premium Header Styling */
+            h5 {
+                text-transform: uppercase;
+                font-size: 0.95rem;
+                letter-spacing: 1.5px;
+                color: $vibrant-blue !important;
+                position: relative;
+                padding-bottom: 12px;
+                margin-bottom: 25px !important;
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    left: 1rem;
+                    width: 40px;
+                    height: 3px;
+                    background: linear-gradient(to right, $vibrant-blue, $hq-accent);
+                    border-radius: 2px;
+                }
+            }
+
+            .nav-link {
+                padding: 12px 20px;
+                color: #475569;
+                font-size: 0.95rem;
+                border: none;
+                background: none;
+                width: 100%;
+
+                &.active {
+                    background: $primary-blue !important;
+                    color: white !important;
+                }
+
+                &:hover:not(.active) {
+                    background: $bg-light;
+                    color: $primary-blue;
+                }
+            }
+
+            /* Responsive Mobile Styling for Sidebar */
+            @media (max-width: 991px) {
+                padding: 15px !important;
+
+                h5 {
+                    text-align: center;
+                    font-size: 0.85rem;
+                    margin-bottom: 15px !important;
+
+                    &::after {
+                        left: 50%;
+                        transform: translateX(-50%);
+                    }
+                }
+
+                .nav-pills {
+                    flex-direction: row !important;
+                    flex-wrap: nowrap;
+                    overflow-x: auto;
+                    gap: 12px;
+                    padding-bottom: 5px;
+                    -webkit-overflow-scrolling: touch;
+                    scrollbar-width: none;
+                    /* Firefox */
+
+                    &::-webkit-scrollbar {
+                        display: none;
+                        /* Chrome/Safari */
+                    }
+
+                    .nav-link {
+                        width: auto;
+                        white-space: nowrap;
+                        padding: 5px 10px;
+                        gap: 5px !important;
+                        border-radius: 10px !important;
+                        justify-content: center;
+                        background: #f8fafc;
+                        border: 1px solid rgba($primary-blue, 0.05);
+
+                        &.active {
+                            background: $vibrant-blue !important;
+                            box-shadow: 0 4px 12px rgba($vibrant-blue, 0.25);
+                        }
+                    }
+                }
+            }
+        }
+
+        .legislation-content-card {
+            min-height: 500px;
+        }
+
+        .custom-leg-table {
+            tr {
+                transition: background 0.2s ease;
+
+                &:hover {
+                    background-color: rgba($vibrant-blue, 0.02);
+                }
+            }
+
+            th {
+                text-transform: uppercase;
+                font-size: 0.75rem;
+                letter-spacing: 1px;
+                color: #64748b;
+                font-weight: 700;
+            }
+        }
+
+        .btn-view-pdf-modern {
+            background: $vibrant-blue;
+            color: white;
+            padding: 8px 22px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 700;
+            white-space: pre;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            border: none;
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            box-shadow: 0 4px 12px rgba($vibrant-blue, 0.2);
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: $primary-blue;
+                z-index: -1;
+                transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            }
+
+            &:hover {
+                color: white;
+                transform: translateY(-3px);
+                box-shadow: 0 10px 20px rgba($primary-blue, 0.3);
+
+                &::before {
+                    transform: translateY(-100%);
+                }
+            }
+
+            &:active {
+                transform: translateY(-1px);
+                box-shadow: 0 5px 10px rgba($primary-blue, 0.2);
+            }
+        }
+
+        .icon-rounded {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .badge-notif {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        /* Convention Cards Premium Styling */
+        .convention-card {
+            background: $white;
+            border-radius: 16px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid rgba($primary-blue, 0.08);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            z-index: 1;
+
+            .card-decor {
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 150px;
+                height: 150px;
+                background: radial-gradient(circle at top right, rgba($vibrant-blue, 0.08), transparent 70%);
+                z-index: -1;
+                transition: transform 0.6s ease;
+            }
+
+            .card-content-wrap {
+                padding: 30px;
+                display: flex;
+                flex-direction: column;
+                flex-grow: 1;
+                height: 100%;
+            }
+
+            .icon-globe-wrap {
+                width: 50px;
+                height: 50px;
+                background: linear-gradient(135deg, $soft-blue, rgba($vibrant-blue, 0.15));
+                border-radius: 12px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: $vibrant-blue;
+                font-size: 1.5rem;
+                margin-bottom: 20px;
+                box-shadow: 0 4px 10px rgba($vibrant-blue, 0.1);
+                transition: all 0.3s ease;
+            }
+
+            .conv-title {
+                font-size: 1.15rem;
+                font-weight: 800;
+                color: $primary-blue;
+                margin-bottom: 12px;
+                line-height: 1.4;
+            }
+
+            .conv-desc {
+                font-size: 0.95rem;
+                color: $text-muted;
+                line-height: 1.6;
+                margin-bottom: 20px;
+                flex-grow: 1;
+            }
+
+            &:hover {
+                transform: translateY(-8px);
+                box-shadow: 0 15px 35px rgba($primary-blue, 0.08);
+                border-color: rgba($vibrant-blue, 0.3);
+
+                .card-decor {
+                    transform: scale(1.5);
+                    background: radial-gradient(circle at top right, rgba($vibrant-blue, 0.12), transparent 70%);
+                }
+
+                .icon-globe-wrap {
+                    transform: scale(1.1) rotate(5deg);
+                    background: $vibrant-blue;
+                    color: $white;
+                    box-shadow: 0 8px 15px rgba($vibrant-blue, 0.2);
+                }
+            }
+        }
+
+        .content-fade-in {
+            animation: fadeInLeg 0.4s ease-out;
+        }
+
+        @keyframes fadeInLeg {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .bg-hover-light:hover {
+            background-color: $bg-light !important;
+        }
+
+        .italic {
+            font-style: italic;
+        }
+    }
+
+    // Motto, Mission & Vision Page Specific Styles
+    &.motto-mission-vision-page {
+        .mmv-section {
+            padding: 60px 0 80px;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+        }
+
+        .modern-mmv-card {
+            background: $white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            height: 100%;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 1px solid rgba($vibrant-blue, 0.1);
+            position: relative;
+            z-index: 1;
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 5px;
+                background: linear-gradient(to right, $vibrant-blue, $hq-accent);
+                transform: scaleX(0);
+                transform-origin: left;
+                transition: transform 0.4s ease;
+                z-index: 2;
+            }
+
+            &:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+                border-color: transparent;
+
+                &::before {
+                    transform: scaleX(1);
+                }
+
+                .card-image-box img {
+                    transform: scale(1.08);
+                }
+            }
+
+            &.featured {
+                border: 2px solid rgba($vibrant-blue, 0.3);
+                box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+                transform: scale(1.02);
+
+                &:hover {
+                    transform: scale(1.02) translateY(-10px);
+                }
+
+                @media (max-width: 991px) {
+                    transform: none;
+
+                    &:hover {
+                        transform: translateY(-10px);
+                    }
+                }
+            }
+
+            .card-image-box {
+                width: 100%;
+                height: 220px;
+                overflow: hidden;
+                position: relative;
+                background: #f1f5f9;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    transition: transform 0.6s ease;
+                }
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 40px;
+                    background: linear-gradient(to top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+                }
+            }
+
+            .card-content-box {
+                padding: 30px;
+                text-align: center;
+
+                .title {
+                    font-size: 1.4rem;
+                    font-weight: 800;
+                    color: $primary-blue;
+                    margin-bottom: 12px;
+                    letter-spacing: 0.5px;
+                }
+
+                .title-divider {
+                    width: 40px;
+                    height: 3px;
+                    background: $vibrant-blue;
+                    margin: 0 auto 15px;
+                    border-radius: 2px;
+                }
+
+                .description {
+                    font-size: 1rem;
+                    color: $text-muted;
+                    line-height: 1.6;
+                    margin-bottom: 0;
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 991px) {
+    .about-page {
+        section {
+            padding: 50px 0;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+        }
+
+        .hq-image-container {
+            margin-top: 30px;
+        }
+    }
+}

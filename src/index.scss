@@ -1,0 +1,135 @@
+@use './styles/variables' as *;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800;900&display=swap');
+
+/* Global base styles - clean reset for government portal */
+:root {
+  --theme-primary: #1e5ba3;
+  --theme-primary-rgb: 30, 91, 163;
+  --theme-navy: #071a36;
+  --theme-navy-rgb: 7, 26, 54;
+  --theme-accent: #38bdf8;
+  --theme-accent-rgb: 56, 189, 248;
+  --theme-secondary-bg: #f8fafc;
+
+  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[data-theme='secondary'] {
+  --theme-primary: #105756;
+  --theme-primary-rgb: 16, 87, 86;
+  --theme-navy: #0a3d3c;
+  --theme-navy-rgb: 10, 61, 60;
+  --theme-accent: #26aba9;
+  --theme-accent-rgb: 38, 171, 169;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Google Sans", sans-serif;
+}
+
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: $white;
+  color: $text-main;
+  overflow-x: clip;
+  /* Prevent horizontal scroll while maintaining sticky */
+}
+
+a {
+  font-weight: 500;
+  color: $primary-blue;
+  text-decoration: inherit;
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: $dark-navy;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+/* Common Layout Utilities */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.py-5 {
+  padding-top: 3rem !important;
+  padding-bottom: 3rem !important;
+}
+
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+/* Global Theme Button - Latest News Style */
+.btn-view-link {
+  background: $vibrant-blue;
+  color: #ffffff !important;
+  padding: 10px 24px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  box-shadow: 0 4px 12px rgba($vibrant-blue, 0.2);
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: $dark-navy;
+    z-index: -1;
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  }
+
+  &:hover {
+    color: #ffffff !important;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+
+    &::before {
+      transform: translateY(-100%);
+    }
+  }
+
+  &:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  }
+}
